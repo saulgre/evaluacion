@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio1</title>
+</head>
+<body>
+    <h1 style="color: rgb(8, 176, 243);">Ejercicio 1. Enteros al derecho y al revés. Saul Rodriguez</h1>
+
+    <script>
+
+const invertirEntero = function(numero) {
+    let negativo = false;
+    if(numero < 0) {
+        negativo = true;
+        numero *= -1;
+    };
+    numero = numero.toString();
+    //Invertimos los numeros con el metodo .reverse
+    let alreves = parseInt(numero.split('').reverse().join(''));
+    if(alreves > Math.pow(2,31) - 1){//Método para elevar a la potencia el 2 ^ 31 = 7FFFFFFF
+        return 0;
+    }
+    if(negativo){
+        return -1 * alreves;
+    } else {
+        return alreves;
+    }
+};
+
+/*
+console.log(invertirEntero(-456)); Esto es por si no quieres pedir numeros por pantalla al usuario
+console.log(invertirEntero(4147483645)); Retorna 0*/
+
+let resultado = invertirEntero(prompt("Entero con signo de 32 bits: "));
+console.log(resultado);
+
+    </script>
+</body>
+</html>
