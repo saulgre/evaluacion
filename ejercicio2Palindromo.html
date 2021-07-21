@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio2</title>
+</head>
+<body>
+    <h1 style="color: rgb(8, 176, 243);">Ejercicio 2. Números palíndromos. Saul Rodriguez</h1>
+
+    <script>
+
+        const palindromo = function (numero = 0) {
+            if (!numero) {
+                return console.log("Campo vacío, ingresar un número")//Por si ponen un campo vacio
+            }
+            numero = numero.toString();
+            let invertir = numero.split("").reverse().join("");
+            
+            if (numero === invertir) {
+                Boolean = true;
+            } else {
+                Boolean = false;
+            }
+            return Boolean;
+        }
+        //console.log(palindromo(989));//Esto es por si no quieres solicitar datos por pantalla al usuario
+        let resultado = palindromo(prompt("Introduce un número: "));
+        console.log(resultado);
+
+    </script>
+</body>
+</html>
